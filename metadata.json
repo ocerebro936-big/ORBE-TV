@@ -1,0 +1,8 @@
+{
+  "name": "Remix Universo Blue Ultimate",
+  "description": "Portal oficial e ecossistema de streaming UBlue TV com UBlue Content Engine, TV ao vivo, pacotes a partir de 25 MT, download de app e agregador de conteúdos e canais.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

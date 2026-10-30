@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Early defensive handler to catch external browser extension errors (e.g. MetaMask inpage.js)
+      window.addEventListener('unhandledrejection', function(e) {
+        var err = (e && e.reason ? (e.reason.message || e.reason.stack || e.reason) : '') + '';
+        if (
+          err.indexOf('MetaMask') !== -1 ||
+          err.indexOf('ethereum') !== -1 ||
+          err.indexOf('inpage.js') !== -1 ||
+          err.indexOf('nkbihfbeogaeaoehlefnkodbefgpgknn') !== -1
+        ) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+        }
+      }, true);
+      window.addEventListener('error', function(e) {
+        var msg = (e && (e.message || e.filename || '')) + '';
+        if (
+          msg.indexOf('MetaMask') !== -1 ||
+          msg.indexOf('ethereum') !== -1 ||
+          msg.indexOf('inpage.js') !== -1 ||
+          msg.indexOf('nkbihfbeogaeaoehlefnkodbefgpgknn') !== -1
+        ) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+        }
+      }, true);
+    </script>
+    <title>ORBE TV - A nova era da televisão em Moçambique</title>
+    <meta name="description" content="ORBE TV — A nova era da televisão. Streaming ao vivo, canais nacionais, conteúdo original, Creator Hub, Business Center, Partner Network e ORBE AI Engine." />
+    <meta property="og:title" content="ORBE TV - A nova era da televisão" />
+    <meta property="og:description" content="A nova era da televisão em Moçambique. Streaming, Creator Hub, Business Center, Partner Network e ORBE AI Engine." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#020617] text-slate-100 antialiased selection:bg-blue-600 selection:text-white min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
